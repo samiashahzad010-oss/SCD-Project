@@ -2,12 +2,19 @@
 Simple Chat / Messaging Simulator
 
 PROJECT DESCRIPTION
+
 This project is a proof-of-concept Desktop application built using Java Swing that simulates a basic, asynchronous messaging environment. The core goal is to showcase the effective integration of several Design Patterns to manage the application's functionality. The simulator allows a user (Student_User) to send text and system messages and includes a background thread that simulates messages incoming from a TeacherBot.
+
 The architecture leverages five main design patterns:
+
 Singleton Pattern (Creational): The ChatEngine is implemented as a Singleton to ensure only one, centralized instance exists. This instance is responsible for managing all Chat Logs and handling Message Routing (notifying observers).
+
 Message Factory Pattern (Creational): The MessageFactory is used to create specific message objects (e.g., TextMessage or SystemMessage) based on a string input, abstracting the creation logic away from the main application flow.
+
 ChatSession Builder Pattern (Creational): The ChatSessionBuilder provides a flexible and clear way to construct and configure the user's session parameters, such as the username and theme.
+
 Decorator Pattern (Structural): The TimestampDecorator wraps a base message object to dynamically add features, specifically a timestamp, without altering the core message structure.
+
 Observer Pattern (Behavioral): The ChatEngine acts as the Subject, notifying its Observer, the Chat_Simulator (the main GUI class), every time a new message is sent. This effectively decouples the data/engine logic from the UI rendering, enabling live updates.
 
 HOW TO RUN THE SYSTEM
